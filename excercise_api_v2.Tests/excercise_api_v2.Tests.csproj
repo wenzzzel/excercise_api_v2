@@ -14,4 +14,8 @@
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\excercise_api_v2\excercise_api_v2.csproj" />
+  </ItemGroup>
+
 </Project>
