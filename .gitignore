@@ -351,3 +351,4 @@ MigrationBackup/
 
 # Added by wenzzzel
 .vscode/
+net6.0/
