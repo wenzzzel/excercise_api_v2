@@ -6,7 +6,11 @@ using excercise_api_v2.Interfaces;
 using excercise_api_v2.Repos;
 
 var builder = WebApplication.CreateBuilder(args);
-var cosmosDbRepository = new CosmosDbRepository(new CosmosClient(builder.Configuration.GetConnectionString("CosmosDB")));
+var cosmosDbRepository = new CosmosDbRepository(
+    new CosmosClient(builder.Configuration.GetConnectionString("CosmosDB")),
+    builder.Configuration.GetSection("CosmosDB").GetValue<string>("Database"),
+    builder.Configuration.GetSection("CosmosDB").GetValue<string>("Container")
+);
 
 // Add services to the container.
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
